@@ -1,0 +1,85 @@
+
+{
+  "RecordType": [
+    {
+      "col": "1",
+      "title": "Record Type Alias",
+      "key": "alias",
+      "check": "N"
+    },
+    {
+      "col": "2",
+      "title": "Module",
+      "key": "moduleName",
+      "check": "N"
+    },
+    {
+      "col": "3",
+      "title": "Record Type",
+      "key": "capType",
+      "check": "N"
+    },
+    {
+      "col": "4",
+      "title": "Fee Schedule",
+      "key": "feeScheduleName",
+      "check": "Y"
+    },
+    {
+      "col": "5",
+      "title": "Inspection Group",
+      "key": "inspectionGroupCode",
+      "check": "Y"
+    },
+    {
+      "col": "6",
+      "title": "Workflow",
+      "key": "processCode",
+      "check": "Y"
+    },
+    {
+      "col": "7",
+      "title": "ASI Group",
+      "key": "specInfoCode",
+      "check": "Y"
+    },
+    {
+      "col": "8",
+      "title": "ASI Lookup Table",
+      "key": "isCheckedASILookup",
+      "check": "Y"
+    },
+    {
+      "col": "9",
+      "title": "Smart Choice",
+      "key": "smartChoiceCode",
+      "check": "Y"
+    }
+  ],
+  "AddrType": [
+    {
+      "col": "1",
+      "title": "Address Type Group",
+      "key": "addrGroup",
+      "check": "N"
+    },
+    {
+      "col": "2",
+      "title": "Record Status",
+      "key": "auditStatus",
+      "check": "N"
+    },
+    {
+      "col": "3",
+      "title": "Update Date",
+      "key": "auditDate",
+      "check": "N"
+    },
+    {
+      "col": "4",
+      "title": "Update By",
+      "key": "auditID",
+      "check": "N"
+    }
+  ]
+}

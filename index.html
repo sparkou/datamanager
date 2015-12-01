@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="dmApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Data Manager</title>
+
+  <link rel="stylesheet" media="screen" href="css/app-prefixed.min.css">
+  <link rel="stylesheet" media="screen" href="css/styles.css">
+  <link rel="stylesheet" media="screen" href="css/re-skin-v2.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/angular-ui-tree.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/angular/angular.js"></script>
+  <script src="js/angular/angular-ui-router.js"></script>
+  <script src="js/angular/angular-resource.js"></script>
+  <script src="js/angular/angular-translate.js"></script>
+  <script src="js/angular/angular-translate-loader-static-files.js"></script>
+  <script src="js/angular/ui-bootstrap-tpls-0.14.3.min.js"></script>
+  <script src="js/angular/angular-ui-tree.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/apiService.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+
+
+</head>
+  <body>
+    <header class="application-bar layer-2">
+      <div class="pull-left">
+        <a href="#" class="agency">BPTDEV</a>
+        <span class="divider" role="presentation">I</span>
+        <span class="product">Accela Automation</span>
+      </div>
+      <div class="pull-right">
+        <a href="" class="alerts"></a>
+        <div class="environment dropdown" uib-dropdown="" on-toggle="toggled(open)">
+          <a aria-expanded="false" aria-haspopup="true" uib-dropdown-toggle="" tabindex="100">
+            PROD
+            <span class="custom-caret" role="presentation"></span>
+          </a>
+          <!--<ul class="dropdown-menu" role="menu">-->
+            <!--<li role="menuitem" class="clearfix">-->
+              <!--<div class="pull-left">-->
+                <!--<a href="#" tabindex="100">Accela</a>-->
+              <!--</div>-->
+              <!--<div class="pull-right">-->
+                <!--<span class="glyphicon glyphicon-ok"></span>-->
+              <!--</div>-->
+            <!--</li>-->
+          <!--</ul>-->
+        </div>
+
+        <div class="settings" id="settings">
+          <a onclick="showSettings()" aria-expanded="true" class="dropdown-toggle" aria-haspopup="true" data-toggle="dropdown" tabindex="100"></a>
+          <!--<ul class="dropdown-menu" role="menu">-->
+            <!--<li role="menuitem" class="clearfix " ng-repeat="link in applicationBar.links">-->
+              <!--<div class="pull-left">-->
+                <!--<a ng-click="openAppBarLink(link)" class="ng-binding">Administration</a>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li role="menuitem" class="clearfix " ng-repeat="link in applicationBar.links">-->
+              <!--<div class="pull-left">-->
+                <!--<a ng-click="openAppBarLink(link)" class="ng-binding">Classic Administration</a>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li role="menuitem" class="clearfix " ng-repeat="link in applicationBar.links">-->
+              <!--<div class="pull-left">-->
+                <!--<a ng-click="openAppBarLink(link)" class="ng-binding">Switch to V360</a>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li role="menuitem" class="clearfix ">-->
+              <!--<div class="pull-left"><a onmouseout="">Sign Out</a>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li role="menuitem" class="clearfix hidden">-->
+              <!--<div class="pull-left">-->
+                <!--<a ng-click="openAppBarLink({ name: 'Portlet Debug' })" class="ng-binding">Portlet Debug</a>-->
+              <!--</div>-->
+            <!--</li>-->
+          <!--</ul>-->
+        </div>
+      </div>
+    </header>
+
+    <section class="main-container">
+
+      <div class="slideout default-slideout layer-5">
+          <div class="pull-left"></div>
+          <div class="pull-right">
+            <a href="#">
+              <span class="glyphicon glyphicon-remove-circle"></span>
+            </a>
+          </div>
+        <div class="content"> Slide Out Content Template</div>
+      </div>
+      <nav class="menu-bar layer-3" role="navigation" onload="menubar.onload()">
+        <!--<div id="main-menu" role="navigation" aria-label="tbd">-->
+          <!--<ul role="menu">-->
+            <!--<li role="menuitem" class="dashboard-tile active">-->
+              <!--<a ui-sref="home" class="icon ng-isolate-scope tasks" aria-label="tbd" tabindex="100"></a>-->
+            <!--</li>-->
+            <!--<li role="menuitem" class="map-tile hidden">-->
+              <!--<a ui-sref="home" class="icon icon-map" aria-label="tbd" tabindex="100"></a>-->
+            <!--</li>-->
+            <!--<li role="menuitem" class="launchpad-tile no-bottom-border">-->
+              <!--<a ui-sref="feature({type: 'export'})" class="icon icon-new" aria-label="tbd" aria-haspopup="true" aria-expanded="false" tabindex="100"></a>-->
+            <!--</li>-->
+            <!--<li role="menuitem" class="launchpad-tile no-bottom-border">-->
+              <!--<a ui-sref="feature({type: 'import'})" class="icon icon-new" aria-label="tbd" aria-haspopup="true" aria-expanded="false" tabindex="100"></a>-->
+            <!--</li>-->
+            <!--<li role="menuitem" class="launchpad-tile no-bottom-border">-->
+              <!--<a ui-sref="feature({type: 'delete'})" class="icon icon-new" aria-label="tbd" aria-haspopup="true" aria-expanded="false" tabindex="100"></a>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</div>-->
+        <div id="spaces-menu">
+          <ul class="text-center" role="menu">
+            <li class="spaces" ng-class="{'active': $state.includes('home')}" role="menuitem">
+              <div class="icon icon-background" ui-sref="home">
+              </div>
+              <div class="spaces-name">
+                <a ui-sref="home" ng-disabled="" aria-label="tbd" tabindex="100" class="">
+                  <div class="display-ellipsis">Home</div>
+                  <div class="display-ellipsis"></div>
+                </a>
+              </div>
+            </li>
+            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'export'})}" role="menuitem">
+              <div class="icon icon-background" ui-sref="feature({type: 'export'})">
+              </div>
+              <div class="spaces-name">
+                <a ui-sref="feature({type: 'export'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">
+                  <div class="display-ellipsis">Export</div>
+                  <div class="display-ellipsis"></div>
+                </a>
+              </div>
+            </li>
+            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'import'})}" role="menuitem">
+              <div class="icon icon-background" ui-sref="feature({type: 'import'})">
+              </div>
+              <div class="spaces-name">
+                <a ui-sref="feature({type: 'import'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">
+                  <div class="display-ellipsis">Import</div>
+                  <div class="display-ellipsis"></div>
+                </a>
+              </div>
+            </li>
+            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'delete'})}" role="menuitem">
+              <div class="icon icon-background" ui-sref="feature({type: 'delete'})">
+              </div>
+              <div class="spaces-name">
+                <a ui-sref="feature({type: 'delete'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">
+                  <div class="display-ellipsis">Delete</div>
+                  <div class="display-ellipsis"></div>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="ng-scope">
+        <div style="overflow : auto; width: 1821px; height: 898px">
+          <div class="row" ui-view=""></div>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>
+
+

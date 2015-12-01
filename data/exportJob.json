@@ -1,0 +1,32 @@
+[
+  {
+    "batchJobModel": {
+      "jobName": "new UI model test",
+      "jobStatus": "On Hold",
+      "scheduleType": "",
+      "startDate": "start date",
+      "startTime": "start time"
+    },
+    "configModel": {
+      "feature": "",
+      "jobType": "Data Manager Export",
+      "description": "This is a test export job"
+    },
+    "result": []
+  },
+  {
+    "batchJobModel": {
+      "jobName": "new UI model test 2",
+      "jobStatus": "On Hold",
+      "scheduleType": "",
+      "startDate": "start date",
+      "startTime": "start time"
+    },
+    "configModel": {
+      "feature": "",
+      "jobType": "Data Manager Export",
+      "description": "This is a test export job"
+    },
+    "result": []
+  }
+]

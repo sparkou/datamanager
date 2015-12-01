@@ -1,0 +1,205 @@
+[
+  {
+    "id": 0,
+    "key": "summary",
+    "title": "SUMMARY",
+    "nodes": []
+  },
+  {
+    "id": 1,
+    "key": "record",
+    "title": "RECORD_TYPE",
+    "nodes": []
+  },
+  {
+    "id": 2,
+    "key": "aa",
+    "title": "AA_CONFIGURATION",
+    "nodes": [
+      {
+        "id": 21,
+        "key": "addrType",
+        "title": "ADDR_TYPE_GROUP",
+        "nodes": []
+      },
+      {
+        "id": 22,
+        "key": "asiNav",
+        "title": "APP_SPEC_INFO",
+        "nodes": [
+          {
+            "id": 221,
+            "key": "asi",
+            "title": "APP_SPEC_INFO",
+            "nodes": []
+          },
+          {
+            "id": 222,
+            "key": "asit",
+            "title": "APP_SPEC_INFO_TAB",
+            "nodes": []
+          },
+          {
+            "id": 223,
+            "key": "asidrill",
+            "title": "APP_SPEC_INFO_DRILL",
+            "nodes": []
+          },
+          {
+            "id": 224,
+            "key": "asiform",
+            "title": "ASI_FORM_EDITOR",
+            "nodes": []
+          },
+          {
+            "id": 225,
+            "key": "asilook",
+            "title": "ASI_LOOK_TAB",
+            "nodes": []
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "key": "audit",
+        "title": "AUDIT_LOG",
+        "nodes": []
+      },
+      {
+        "id": 24,
+        "key": "appstatus",
+        "title": "APP_STATUS_GROUP",
+        "nodes": []
+      },
+      {
+        "id": 25,
+        "key": "batchengine",
+        "title": "BATCH_ENGINE",
+        "nodes": []
+      },
+      {
+        "id": 26,
+        "key": "batchjobq",
+        "title": "BATCH_JOB_QUEUE",
+        "nodes": []
+      },
+      {
+        "id": 27,
+        "key": "batchjobq",
+        "title": "CALENDAR",
+        "nodes": [
+          {
+            "id": 271,
+            "key": "inspcalendar",
+            "title": "INSPECTION_CALENDAR",
+            "nodes": []
+          },
+          {
+            "id": 272,
+            "key": "meetcalendar",
+            "title": "MEETING_CALENDAR",
+            "nodes": []
+          },
+          {
+            "id": 273,
+            "key": "usercalendar",
+            "title": "USER_CALENDAR",
+            "nodes": []
+          },
+          {
+            "id": 274,
+            "key": "agencycalendar",
+            "title": "HOLIDAY_CALENDAR",
+            "nodes": []
+          },
+          {
+            "id": 275,
+            "key": "supervisor",
+            "title": "SUPERVISOR_MAINTENANCE",
+            "nodes": []
+          },
+          {
+            "id": 276,
+            "key": "meetingtype",
+            "title": "MEETING_TYPE",
+            "nodes": []
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "key": "cmmanager",
+        "title": "COMM_MANAGER",
+        "nodes": [
+          {
+            "id": 281,
+            "key": "accountsetting",
+            "title": "ACCOUNT_SETTINGS",
+            "nodes": []
+          },
+          {
+            "id": 282,
+            "key": "alert",
+            "title": "ALERT",
+            "nodes": []
+          },
+          {
+            "id": 283,
+            "key": "alertrule",
+            "title": "ALERT_RULE",
+            "nodes": []
+          },
+          {
+            "id": 284,
+            "key": "announcement",
+            "title": "ANNOUNCEMENT",
+            "nodes": []
+          },
+          {
+            "id": 285,
+            "key": "gensetting",
+            "title": "GENERAL_SETTINGS",
+            "nodes": []
+          },
+          {
+            "id": 286,
+            "key": "notiftemp",
+            "title": "NOTIFI_TEMPLATE",
+            "nodes": []
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "key": "condition",
+        "title": "CONDITION",
+        "nodes": []
+      },
+      {
+        "id": 30,
+        "key": "console",
+        "title": "CONSOLE_CONFIGURATION",
+        "nodes": []
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "key": "ref",
+    "title": "REFERENCE_DATA",
+    "nodes": []
+  },
+  {
+    "id": 4,
+    "key": "aca",
+    "title": "ACA_CONFIGURATION",
+    "nodes": []
+  },
+  {
+    "id": 5,
+    "key": "aam",
+    "title": "AAM_CONFIGURATION",
+    "nodes": []
+  }
+]
+

@@ -1,0 +1,61 @@
+
+<script type="text/javascript">
+    function func1() {
+        var url = '/portlets/cap/capSearch.do?pageSize=5&amp;module=Building&amp;totalPages=11&amp;pageNo=@@##@@';
+        var index = document.getElementById('page-navigator-input-id').value; if(index&lt;1){index=1;}
+        var pageCount = document.getElementById('pagenavigatorsize').value; if(index-pageCount&gt;0){index = pageCount; };
+        var newURL=url.replace('@@##@@', index);return SimulateClick('1','accelasubmitbuttonname','','action',newURL, 'target', '_self');
+    }
+</script>
+<div class="row">
+    <div class="col-md-4">
+        <input type="text" class="hidden" ng-model="allrows"/>
+        <input type="text" class="form-control" ng-model="keyName" placeholder="{{'FIND_BY_NAME' | translate: 'cols[0].title' }}"/>
+    </div>
+    <div class="col-md-6">
+        <!--<button type="button" class="btn btn-default" ng-click="newJob(type)">{{'NEW_PARAM_JOB' | translate: translationData}}</button>-->
+    </div>
+</div>
+<div class="padding-right-1p">
+    <table id="AccelaMainTable" class="AccelaMainTable" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+        <tr width="">
+            <th class="portlet-section-subheader-checkbox" width="22">
+                <input type="checkbox" name="value(ac360_list_id)" id="ac360_list_id" value="1" ng-model="master" title="Select All">
+            </th>
+            <th class="portlet-section-subheader" width="150" align="left" valign="top" nowrap="" ng-repeat="col in cols">
+                <input type="checkbox" ng-if="col.check == 'Y'" title="Select All">
+                <a href="#" target="_self">{{col.title}}</a>
+            </th>
+        </tr>
+        <tr class="singleRow" id="row1" onclick="" onmouseout="" onmouseover="" ng-repeat="row in rows | filter: keyName">
+            <td class="AlignL-td-border" nowrap="">
+                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_sr0" value="0" ng-if="row.selected == 'Y'" checked="checked"  title="Select">
+                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_nr0" value="0" ng-if="row.selected == 'N'" title="Select">
+                <a href="" ng-click="showConflict('lg')" ng-if="row.selected == 'Y'"><span class="glyphicon glyphicon-exclamation-sign" style="color:darkred;"></span></a>
+
+            </td>
+
+            <td class="portlet-section-body" ng-repeat="col in cols">
+                <input type="checkbox" ng-if="col.check == 'Y' && row[col.key] == null" disabled="disabled" title="Select All">
+                <input type="checkbox" ng-if="col.check == 'Y' && row[col.key] != null" title="Select All">&nbsp;{{row[col.key]}}
+
+                <!--<div ng-if="col.key.indexOf('.') > -1">-->
+                <!--<input type="checkbox" ng-if="col.check == 'Y' && row[col.key] == null" disabled="disabled" title="Select All">-->
+                <!--<input type="checkbox" ng-if="col.check == 'Y' && row[col.key] != null" title="Select All">&nbsp;{{row[col.key.split('.')[0]][(col.key).split('.')[1]]}}-->
+                <!--</div>-->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="pagingInfo" style="margin-top: 5px;">
+    &nbsp;&nbsp; {{'PAGE' | translate}} &nbsp;
+    <input name="page-navigator-input-id" id="page-navigator-input-id" type="text" class="page-navigator-input portlet-form-input-field" ng-model="currentPage"  value="{{currentPage}}" style="width: 35px; height: 19px;">
+    / {{numPages}}
+    <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+</div>
+
+
+

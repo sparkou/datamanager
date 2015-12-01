@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/css/app-prefixed.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/re-skin-v2.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/styles.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/back_medium_active.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/angular/ui-bootstrap-tpls-0.14.3.min.js" charset="UTF-8" />
+  </component>
+</project>

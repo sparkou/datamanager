@@ -1,0 +1,32 @@
+[
+  {
+    "batchJobModel": {
+      "jobName": "import job list 1",
+      "jobStatus": "On Hold",
+      "scheduleType": "",
+      "startDate": "start date",
+      "startTime": "start time"
+    },
+    "configModel": {
+      "feature": "",
+      "jobType": "Data Manager Export",
+      "description": "This is a test import job"
+    },
+    "result": []
+  },
+  {
+    "batchJobModel": {
+      "jobName": "import job list 2",
+      "jobStatus": "On Hold",
+      "scheduleType": "",
+      "startDate": "start date",
+      "startTime": "start time"
+    },
+    "configModel": {
+      "feature": "",
+      "jobType": "Data Manager Export",
+      "description": "This is a test import job"
+    },
+    "result": []
+  }
+]

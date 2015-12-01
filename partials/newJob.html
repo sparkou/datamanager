@@ -1,0 +1,39 @@
+
+<div class="modal-header">
+    <h2 class="modal-title">{{'NEW_PARAM_JOB' | translate: translationData}}</h2>
+</div>
+<div class="modal-body">
+
+    <form class="form-horizontal" name="jobForm">
+        <div class="form-group" ng-class="{ 'has-error' : jobForm.jobName.$invalid && !jobForm.jobName.$pristine }">
+            <label for="jobName" class="col-sm-2 control-label">{{'NAME' | translate}}</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="jobName" name="jobName" placeholder="{{'ENTER_A_NAME' | translate}}" ng-model="job.jobName" required>
+                <p ng-show="jobForm.jobName.$invalid && !jobForm.jobName.$pristine" class="help-block">{{'VALIDATE_IS_REQUIRED' | translate: translationData}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="agency" class="col-sm-2 control-label">{{'AGENCY' | translate}}</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="agency" placeholder="Agency" disabled="disabled" ng-model="job.agency">
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : jobForm.email.$invalid && !jobForm.email.$pristine }">
+            <label for="inputEmail" class="col-sm-2 control-label">{{'EMAIL' | translate}}</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="{{'ENTER_AN_EMAIL' | translate}}" ng-model="job.email">
+                <p ng-show="jobForm.email.$invalid && !jobForm.email.$pristine" class="help-block">{{'VALIDATE_EMAIL' | translate}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="col-sm-2 control-label">{{'DESCRIPTION' | translate}}</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="description" placeholder="{{'ENTER_A_DESCRIPTION' | translate}}" ng-model="job.description">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="createJob()" ng-disabled="jobForm.$invalid">{{'SUBMIT' | translate}}</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">{{'CANCEL' | translate}}</button>
+</div>

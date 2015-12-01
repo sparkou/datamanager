@@ -1,0 +1,94 @@
+{
+	"batchJobModel": {
+		"jobName": "new UI model test",
+		"jobStatus": "On Hold",
+		"scheduleDate": "",
+		"scheduleTime": "",
+		"startDate": "start date",
+		"startTime": "start time"
+		},
+	"configModel": {
+		"feature": "record type",
+		"jobType": "Data Manager Export"
+		},
+	"result": [
+		{
+			"selected": "Y",
+			"addrGroup": "value 11",
+			"auditStatus": "value 12",
+			"auditID": "value 13",
+		    "auditDate": "value 14"
+		},
+		{
+			"selected": "N",
+			"addrGroup": "value 21",
+			"auditStatus": "value 22",
+			"auditID": "value 23",
+		    "auditDate": "value 24"
+		},
+		{
+		  "selected": "N",
+		  "addrGroup": "value 31",
+		  "auditStatus": "value 32",
+		  "auditID": "value 33",
+		  "auditDate": "value 34"
+		},
+		{
+		  "selected": "N",
+		  "addrGroup": "value 41",
+		  "auditStatus": "value 42",
+		  "auditID": "value 43",
+		  "auditDate": "value 44"
+		},
+		{
+		  "selected": "N",
+		  "addrGroup": "value 51",
+		  "auditStatus": "value 52",
+		  "auditID": "value 53",
+		  "auditDate": "value 54"
+		},
+		{
+		  "selected": "Y",
+		  "addrGroup": "value 61",
+		  "auditStatus": "value 62",
+		  "auditID": "value 63",
+		  "auditDate": "value 64"
+		},
+		{
+		  "selected": "Y",
+		  "addrGroup": "value 71",
+		  "auditStatus": "value 72",
+		  "auditID": "value 73",
+		  "auditDate": "value 74"
+		},
+		{
+		  "selected": "N",
+		  "addrGroup": "value 81",
+		  "auditStatus": "value 82",
+		  "auditID": "value 83",
+		  "auditDate": "value 84"
+		},
+		{
+		  "selected": "Y",
+		  "addrGroup": "value 91",
+		  "auditStatus": "value 92",
+		  "auditID": "value 93",
+		  "auditDate": "value 94"
+		},
+		{
+		  "selected": "Y",
+		  "addrGroup": "value 101",
+		  "auditStatus": "value 102",
+		  "auditID": "value 103",
+		  "auditDate": "value 104"
+		},
+		{
+		  "selected": "N",
+		  "addrGroup": "value 111",
+		  "auditStatus": "value 112",
+		  "auditID": "value 113",
+		  "auditDate": "value 114"
+		}
+	]
+
+}

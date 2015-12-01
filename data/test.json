@@ -1,0 +1,84 @@
+{
+  "batchJobModel": {
+    "jobName": "test Job",
+    "jobStatus": "Complete",
+    "scheduleDate": "schedule date",
+    "scheduleTime": "schedule time",
+    "startDate": "start date",
+    "startTime": "start time"
+  },
+  "configModel": {
+    "feature": "AddrType",
+    "jobType": "Export"
+  },
+  "result": [
+    {
+      "dataModel": {
+        "addrGroup": "value 11",
+        "auditStatus": "value 12",
+        "auditID": "value 13",
+        "auditDate": "value 14"
+      },
+      "configModel": {
+        "selected": "Y",
+        "pks": {
+          "addr_seq": 11,
+          "agency": "TestAgency"
+        },
+        "selectMap": {},
+        "conflictMap": {}
+      }
+    },
+    {
+      "dataModel":{
+        "addrGroup": "value 21",
+        "auditStatus": "value 22",
+        "auditID": "value 23",
+        "auditDate": "value 24"
+      },
+      "configModel": {
+        "selected": "Y",
+        "pks": {
+          "addr_seq": 21,
+          "agency": "TestAgency"
+        },
+        "selectMap": {},
+        "conflictMap": {}
+      }
+    },
+    {
+      "dataModel": {
+        "addrGroup": "value 31",
+        "auditStatus": "value 32",
+        "auditID": "value 33",
+        "auditDate": "value 34"
+      },
+      "configModel": {
+        "selected": "Y",
+        "pks": {
+          "addr_seq": 31,
+          "agency": "TestAgency"
+        },
+        "selectMap": {},
+        "conflictMap": {}
+      }
+    },
+    {
+      "dataModel": {
+        "addrGroup": "value 41",
+        "auditStatus": "value 42",
+        "auditID": "value 43",
+        "auditDate": "value 44"
+      },
+      "configModel": {
+        "selected": "Y",
+        "pks": {
+          "addr_seq": 41,
+          "agency": "TestAgency"
+        },
+        "selectMap": {},
+        "conflictMap": {}
+      }
+    }
+  ]
+}

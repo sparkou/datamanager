@@ -1,0 +1,88 @@
+<header class="header">
+    <h1>
+        <span>{{'PARAM_JOBS' | translate: translationData}}</span>
+    </h1>
+    <a class="refresh" href="javascript: location.reload();"></a>
+</header>
+<div class="work-space">
+    <div class="row padding-left-1p padding-right-1p">
+        <div class="col-md-12">
+            <div id="">
+                <div class="row padding-top-8">
+                    <div class="col-md-4">
+                        <input type="text" class="hidden" ng-model="alljobs"/>
+                        <input type="text" class="form-control" ng-model="keyName" placeholder="{{'FIND_BY_NAME' | translate }}"/>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-default" ng-click="newJob(type)">{{'NEW_PARAM_JOB' | translate: translationData}}</button>
+                    </div>
+                </div>
+                <table id="AccelaMainTable" class="AccelaMainTable" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody>
+                    <tr></tr>
+                    <tr width="">
+                        <th class="portlet-section-subheader" width="150" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'NAME' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="150" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'SCHEDULE_STATUS' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="120" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'JOB_STATUS' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="150" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'START_DATE' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="100" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'START_TIME' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="200" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'DESCRIPTION' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="200" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'ACTIONS' | translate}}</a>
+                        </th>
+                    </tr>
+                    <tr ng-repeat="job in jobs">
+                        <td class="portlet-section-body"><a id="expLinkRow1" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})">{{job.batchJobModel.jobName}}</a></td>
+                        <td class="portlet-section-body">{{job.batchJobModel.scheduleType}}</td>
+                        <td class="portlet-section-body">{{job.batchJobModel.jobStatus}}</td>
+                        <td class="portlet-section-body">{{job.batchJobModel.startDate}}</td>
+                        <td class="portlet-section-body">{{job.batchJobModel.startTime}}</td>
+                        <td class="portlet-section-body">{{job.configModel.description}}</td>
+                        <td class="portlet-section-body">
+                            <div class="task-filter-button dropdown" uib-dropdown is-open="isopen">
+                                <button id="exp-action-{{job.configModel.jobName}}" type="button" class="btn btn-default btn-filter" uib-dropdown-toggle ng-disabled="disabled">
+                                    {{'ACTIONS' | translate}} <span class="custom-caret" role="presentation"></span>
+                                </button>
+                                <ul class="uib-dropdown-menu" role="menu" aria-labelledby="action-{{job.configModel.jobName}}">
+                                    <li role="menuitem"><a href="#">{{'START' | translate}}</a></li>
+                                    <li role="menuitem"><a ng-click="schedule('sm')">{{'SCHEDULE' | translate}}</a></li>
+                                    <li role="menuitem"><a href="#">{{'STOP' | translate}}</a></li>
+                                    <li role="menuitem" ng-if="type == 'export'"><a href="#">{{'SAVE_AS' | translate}}</a></li>
+                                    <li role="menuitem" ng-if="type == 'delete'"><a href="#">{{'BACK_UP' | translate}}</a></li>
+                                    <li role="menuitem" ng-if="type == 'delete'"><a href="#">{{'RECOVER' | translate}}</a></li>
+                                    <li role="menuitem" ng-if="type == 'import' || type == 'delete'"><a href="#">{{'VIEW_LOG' | translate}}</a></li>
+                                    <li class="divider"></li>
+                                    <li role="menuitem"><a href="#">{{'DELETE' | translate}}</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                    </tbody>
+                </table>
+                <div ng-hide="jobs.length">
+                    <p class="bg-warning">No {{type}} Jobs Found</p>
+                </div>
+                <div id="pagingInfo" style="margin-top: 5px;">
+                    &nbsp;&nbsp; {{'PAGE' | translate}} &nbsp;
+                    <input name="page-navigator-input-id" id="page-navigator-input-id" type="text" class="page-navigator-input portlet-form-input-field" ng-model="currentPage"  value="{{currentPage}}" style="width: 35px; height: 19px;">
+                    / {{numPages}}
+                    <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

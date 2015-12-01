@@ -1,0 +1,165 @@
+<style>
+    .full button span {
+        background-color: limegreen;
+        border-radius: 32px;
+        color: black;
+    }
+    .partially button span {
+        background-color: orange;
+        border-radius: 32px;
+        color: black;
+    }
+</style>
+
+<div class="padding-right-1p">
+
+
+    <header class="header">
+        <h1>
+            <span>{{'SUMMARY' | translate}}</span>
+        </h1>
+    </header>
+
+    <div class="padding-left-14px">
+        <div class="row padding-top-8">
+            <div class="col-md-6">
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'NAME' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>{{jobName}}</h5>
+                    </div>
+                </div>
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'JOB_STATUS' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>{{type}}</h5>
+                    </div>
+                </div>
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'AGENCY' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>{{ADDEV}}</h5>
+                    </div>
+                </div>
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'LAST_UPDATED_BY' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>{{ADMIN}}</h5>
+                    </div>
+                </div>
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'UPDATED_ON' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>{{DATE}}</h5>
+                    </div>
+                </div>
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'EMAIL' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Enter an E-mail" ng-model="job.email">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row padding-top-8">
+            <div class="col-md-6" ng-if="type == 'import'">
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'UPLOAD_FILE' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row padding-top-8">
+            <div class="col-md-6" ng-if="type == 'delete'">
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'BACK_UP_A_COPY' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="bakYes" value="bakYes" checked="checked"> Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="bakNo" value="bakNo"> No
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row padding-top-8">
+            <div class="col-md-6">
+                <div class="row padding-top-8 line">
+                    <div class="col-md-6">
+                        <h5>{{'SCHEDULE' | translate}}</h5>
+                    </div>
+                </div>
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'DATE' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'TIME' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" show-spinners="false"></uib-timepicker>
+                    </div>
+                </div>
+                <div class="row padding-td-2">
+                    <div class="col-md-6">
+                        <h5>{{'SCHEDULE_STATUS' | translate}}:</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-control" ng-model="options.scheduleStatus" ng-options="opt for opt in options.status"></select>
+                    </div>
+                </div>
+                <div class="row padding-top-8 line">
+                    <div class="col-md-6">
+                        <h5>{{'DESCRIPTION' | translate}}</h5>
+                    </div>
+                </div>
+                <div class="row padding-td-2">
+                    <div class="col-md-12">
+                        <textarea class="form-control" ng-model="description"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
