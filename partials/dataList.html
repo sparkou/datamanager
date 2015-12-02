@@ -30,15 +30,16 @@
         </tr>
         <tr class="singleRow" id="row1" onclick="" onmouseout="" onmouseover="" ng-repeat="row in rows | filter: keyName">
             <td class="AlignL-td-border" nowrap="">
-                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_sr0" value="0" ng-if="row.selected == 'Y'" checked="checked"  title="Select">
-                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_nr0" value="0" ng-if="row.selected == 'N'" title="Select">
-                <a href="" ng-click="showConflict('lg')" ng-if="row.selected == 'Y'"><span class="glyphicon glyphicon-exclamation-sign" style="color:darkred;"></span></a>
+                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_sr0" value="0" ng-if="((type == 'export' || type == 'delete') && row.configModel.selected == 'Y') || (type == 'import' && row.configModel.selected == 'Y' && row.configModel.conflict != 'same')" checked="checked"  title="Select">
+                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_nr0" value="0" ng-if="((type == 'export' || type == 'delete') && row.configModel.selected != 'Y')" title="Select">
+                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_dr0" value="0" ng-if="type == 'import' && row.configModel.selected == 'N' && row.configModel.conflict == 'same'" disabled="disabled" title="Select">
+                <a href="" ng-click="showConflict('lg')" ng-if="type == 'import' && row.configModel.selected == 'Y' && row.configModel.conflict == 'conflict'"><span class="glyphicon glyphicon-exclamation-sign" style="color:darkred;"></span></a>
 
             </td>
 
             <td class="portlet-section-body" ng-repeat="col in cols">
-                <input type="checkbox" ng-if="col.check == 'Y' && row[col.key] == null" disabled="disabled" title="Select All">
-                <input type="checkbox" ng-if="col.check == 'Y' && row[col.key] != null" title="Select All">&nbsp;{{row[col.key]}}
+                <input type="checkbox" ng-if="col.check == 'Y' && row.dataModel[col.key] == null" disabled="disabled" title="Select All">
+                <input type="checkbox" ng-if="col.check == 'Y' && row.dataModel[col.key] != null" title="Select All">&nbsp;{{row.dataModel[col.key]}}
 
                 <!--<div ng-if="col.key.indexOf('.') > -1">-->
                 <!--<input type="checkbox" ng-if="col.check == 'Y' && row[col.key] == null" disabled="disabled" title="Select All">-->
@@ -51,11 +52,22 @@
 </div>
 
 <div id="pagingInfo" style="margin-top: 5px;">
-    &nbsp;&nbsp; {{'PAGE' | translate}} &nbsp;
-    <input name="page-navigator-input-id" id="page-navigator-input-id" type="text" class="page-navigator-input portlet-form-input-field" ng-model="currentPage"  value="{{currentPage}}" style="width: 35px; height: 19px;">
-    / {{numPages}}
-    <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+    <div class="row">
+        <div class="col-md-1 pagination">
+            <p>&nbsp;&nbsp; {{'PAGE' | translate}} &nbsp;</p>
+        </div>
+        <div class="col-md-1 pagination">
+            <input name="page-navigator-input-id" id="" type="text" class="page-input" ng-model="currentPage"  value="{{currentPage}}" style="width: 35px; height: 19px;">
+            / {{numPages}}
+        </div>
+        <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+    </div>
 </div>
+
+<!--<pre>{{rows | json}}</pre>-->
+<!--{{type}}-->
+<!--<pre>{{allrows[1].configModel.conflictMap | json}}</pre>-->
+
 
 
 

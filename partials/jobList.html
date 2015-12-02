@@ -45,7 +45,7 @@
                     </tr>
                     <tr ng-repeat="job in jobs">
                         <td class="portlet-section-body"><a id="expLinkRow1" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})">{{job.batchJobModel.jobName}}</a></td>
-                        <td class="portlet-section-body">{{job.batchJobModel.scheduleType}}</td>
+                        <td class="portlet-section-body">{{job.batchJobModel.scheduleStatus}}</td>
                         <td class="portlet-section-body">{{job.batchJobModel.jobStatus}}</td>
                         <td class="portlet-section-body">{{job.batchJobModel.startDate}}</td>
                         <td class="portlet-section-body">{{job.batchJobModel.startTime}}</td>

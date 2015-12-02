@@ -20,7 +20,8 @@
         "auditDate": "value 14"
       },
       "configModel": {
-        "selected": "Y",
+        "selected": "N",
+        "conflict": "same",
         "pks": {
           "addr_seq": 11,
           "agency": "TestAgency"
@@ -38,12 +39,15 @@
       },
       "configModel": {
         "selected": "Y",
+        "conflict": "conflict",
         "pks": {
           "addr_seq": 21,
           "agency": "TestAgency"
         },
         "selectMap": {},
-        "conflictMap": {}
+        "conflictMap": {
+          "conflict": "conflict test"
+        }
       }
     },
     {
@@ -54,7 +58,8 @@
         "auditDate": "value 34"
       },
       "configModel": {
-        "selected": "Y",
+        "selected": "N",
+        "conflict": "same",
         "pks": {
           "addr_seq": 31,
           "agency": "TestAgency"
@@ -72,6 +77,7 @@
       },
       "configModel": {
         "selected": "Y",
+        "conflict": "new",
         "pks": {
           "addr_seq": 41,
           "agency": "TestAgency"

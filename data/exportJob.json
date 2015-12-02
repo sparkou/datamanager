@@ -2,8 +2,8 @@
   {
     "batchJobModel": {
       "jobName": "new UI model test",
-      "jobStatus": "On Hold",
-      "scheduleType": "",
+      "jobStatus": "Complete",
+      "scheduleStatus": "On Hold",
       "startDate": "start date",
       "startTime": "start time"
     },
@@ -17,8 +17,8 @@
   {
     "batchJobModel": {
       "jobName": "new UI model test 2",
-      "jobStatus": "On Hold",
-      "scheduleType": "",
+      "jobStatus": "Complete",
+      "scheduleStatus": "On Hold",
       "startDate": "start date",
       "startTime": "start time"
     },

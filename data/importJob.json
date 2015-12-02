@@ -2,8 +2,8 @@
   {
     "batchJobModel": {
       "jobName": "import job list 1",
-      "jobStatus": "On Hold",
-      "scheduleType": "",
+      "jobStatus": "Complete",
+      "scheduleStatus": "On Hold",
       "startDate": "start date",
       "startTime": "start time"
     },
@@ -17,8 +17,8 @@
   {
     "batchJobModel": {
       "jobName": "import job list 2",
-      "jobStatus": "On Hold",
-      "scheduleType": "",
+      "jobStatus": "Complete",
+      "scheduleStatus": "On Hold",
       "startDate": "start date",
       "startTime": "start time"
     },

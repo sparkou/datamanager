@@ -93,15 +93,15 @@ function dmService($q, $http, UrlParsingService, apiService, $log) {
         //return deferred.promise;
     //}
 
-    function getAll(params) {
-        var url = getAllUrl(params);
+    function getAll(feature, jobType) {
+        var url = getAllUrl(feature);
 
-        var obj = {"configModel": {"feature": params}};
+        var obj = {"configModel": {"feature": feature}};
 
         //var obj = {"batchJobModel": {"serviceCategory": "Data Manager Export", "serviceProviderCode": "ADDEV", "jobName": "deleteCap"}, "configModel": {"targetServiceProviderCode": "ADDEV"}};
         var deferred = $q.defer();
         //$http.post(url, obj).success(function(data) {
-        $http.get('/datamanager/data/UIModel.json').success(function(data) {
+        $http.get('/datamanager/data/test.json').success(function(data) {
             return deferred.resolve(data);
         })
         return deferred.promise;

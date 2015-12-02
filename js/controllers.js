@@ -63,7 +63,6 @@ dmApp.controller('JobListCtrl', ['$scope', '$stateParams', 'DataManagerService',
     };
 
     $scope.schedule = function(size) {
-        var job = {"jobName": "", "agency": "Test Agency", "email": "", "description": ""};
         var modalInstance = $uibModal.open({
             animation: false,
             templateUrl: 'partials/schedule.html',
@@ -191,6 +190,7 @@ dmApp.controller('JobDetailCtrl', ['$scope', '$stateParams', '$state', 'DataMana
     }
 
     var feature = $stateParams.key;
+    var jobType = $stateParams.type;
     var colTyp = '';
     if(feature == 'record') {
         colTyp = 'RecordType';
@@ -201,7 +201,7 @@ dmApp.controller('JobDetailCtrl', ['$scope', '$stateParams', '$state', 'DataMana
     DataManagerService.getColDef().then(function(data) {
         $scope.cols = data[colTyp];
     });
-    DataManagerService.getAll(feature).then(function(data) {
+    DataManagerService.getAll(feature, jobType).then(function(data) {
         $scope.allrows = data.result;
     });
     $scope.$watch('allrows', function() {

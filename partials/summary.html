@@ -81,7 +81,14 @@
                         <h5>{{'UPLOAD_FILE' | translate}}:</h5>
                     </div>
                     <div class="col-md-6">
-
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-default btn-file">
+                                    Browse&hellip; <input type="file" multiple>
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" ng-model="" readonly>
+                        </div>
                     </div>
                 </div>
             </div>
