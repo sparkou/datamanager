@@ -28,7 +28,7 @@
                         <h5>{{'NAME' | translate}}:</h5>
                     </div>
                     <div class="col-md-6">
-                        <h5>{{jobName}}</h5>
+                        <h5>{{job.batchJobModel.jobName}}</h5>
                     </div>
                 </div>
                 <div class="row padding-td-2">
@@ -36,7 +36,7 @@
                         <h5>{{'JOB_STATUS' | translate}}:</h5>
                     </div>
                     <div class="col-md-6">
-                        <h5>{{type}}</h5>
+                        <h5>{{job.batchJobModel.jobStatus}}</h5>
                     </div>
                 </div>
                 <div class="row padding-td-2">
@@ -84,10 +84,10 @@
                         <div class="input-group">
                             <span class="input-group-btn">
                                 <span class="btn btn-default btn-file">
-                                    Browse&hellip; <input type="file" multiple>
+                                    {{'BROWSE' | translate}}&hellip; <input type="file">
                                 </span>
                             </span>
-                            <input type="text" class="form-control" ng-model="" readonly>
+                            <input type="text" class="form-control" ng-model="upladFile" readonly>
                         </div>
                     </div>
                 </div>

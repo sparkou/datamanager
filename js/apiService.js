@@ -9,23 +9,44 @@ var dmApp = angular.module('dmApp')
 dmApp.factory('apiService', apiService);
 
 function apiService($resource, $location, $window, $http) {
-    var serverhost = '';
+    var serverhost = '/datamanager/data/';
     var service = {
       Test: function(param) {
           var url = '';
           if(param == 'Export') {
-              url = '/datamanager/data/exportJob.json';
+              url = 'exportJob.json';
           }else if(param == 'Import') {
-              url = '/datamanager/data/importJob.json';
+              url = 'importJob.json';
           }else if(param == 'Delete') {
-              url = '/datamanager/data/deleteJob.json';
+              url = 'deleteJob.json';
           }
           this.api = {
-              GetUrl: "/datamanager/data/exportJob.json",
+              GetUrl: url,
               GetsUrl: url,
               CreateUrl: "",
               UpdateUrl: "",
               DeleteUrl: ""
+          }
+          execRequest.call(this);
+      },
+      Api: function(obj) {
+          var url = '';
+          if(obj.configModel.jobType == 'export') {
+              url = 'testExport.json';
+          }else if(obj.configModel.jobType == 'import') {
+              url = 'testImport.json';
+          }else if(obj.configModel.jobType == 'delete') {
+              url = 'testDelete.json';
+          }
+          this.api = {
+              GetUrl: url,
+              GetsUrl: url,
+              CreateUrl: "",
+              DeleteUrl: "",
+              GetAllUrl: url,
+              GetSelectUrl: url,
+              GetConflictUrl: url,
+              UpdateUrl: url
           }
           execRequest.call(this);
       }
@@ -69,6 +90,31 @@ function apiService($resource, $location, $window, $http) {
                 errorHandler(d, successFunc, errorFunc);
             }, errorFunc);
         }
+
+        this.GetAll = function (requestParams, requestBody, successFunc, errorFunc) {
+            var url = serverhost + this.api.GetAllUrl;
+            var request = $resource(url, {}, {saveData: {method: "POST"}});
+            request.saveData(requestParams, requestBody, function (d) {
+                errorHandler(d, successFunc, errorFunc);
+            }, errorFunc);
+        }
+
+        this.GetSelect = function (requestParams, requestBody, successFunc, errorFunc) {
+            var url = serverhost + this.api.GetSelectUrl;
+            var request = $resource(url, {}, {saveData: {method: "POST"}});
+            request.saveData(requestParams, requestBody, function (d) {
+                errorHandler(d, successFunc, errorFunc);
+            }, errorFunc);
+        }
+
+        this.GetConflict = function (requestParams, requestBody, successFunc, errorFunc) {
+            var url = serverhost + this.api.GetConflictUrl;
+            var request = $resource(url, {}, {saveData: {method: "POST"}});
+            request.saveData(requestParams, requestBody, function (d) {
+                errorHandler(d, successFunc, errorFunc);
+            }, errorFunc);
+        }
+
         var errorHandler = function (d, callback, errorCallback) {
             switch (d.status) {
                 case 200:

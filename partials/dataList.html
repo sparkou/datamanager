@@ -30,10 +30,9 @@
         </tr>
         <tr class="singleRow" id="row1" onclick="" onmouseout="" onmouseover="" ng-repeat="row in rows | filter: keyName">
             <td class="AlignL-td-border" nowrap="">
-                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_sr0" value="0" ng-if="((type == 'export' || type == 'delete') && row.configModel.selected == 'Y') || (type == 'import' && row.configModel.selected == 'Y' && row.configModel.conflict != 'same')" checked="checked"  title="Select">
-                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_nr0" value="0" ng-if="((type == 'export' || type == 'delete') && row.configModel.selected != 'Y')" title="Select">
-                <input type="checkbox" name="value(chk_capSPC,0)" property="value(chk_capSPC,0)" id="ac360_list_id_dr0" value="0" ng-if="type == 'import' && row.configModel.selected == 'N' && row.configModel.conflict == 'same'" disabled="disabled" title="Select">
-                <a href="" ng-click="showConflict('lg')" ng-if="type == 'import' && row.configModel.selected == 'Y' && row.configModel.conflict == 'conflict'"><span class="glyphicon glyphicon-exclamation-sign" style="color:darkred;"></span></a>
+                <input type="checkbox" name=""  ng-model="row.configModel.selected" ng-if="row.configModel.conflict != 'same'" title="Select">
+                <input type="checkbox" name=""  ng-model="row.configModel.selected" ng-if="type == 'import' && row.configModel.conflict == 'same'" disabled="disabled" title="Select">
+                <a href="" ng-click="showConflict('lg')" ng-if="type == 'import' && row.configModel.conflict == 'conflict'"><span class="glyphicon glyphicon-exclamation-sign" style="color:darkred;"></span></a>
 
             </td>
 
@@ -51,20 +50,16 @@
     </table>
 </div>
 
-<div id="pagingInfo" style="margin-top: 5px;">
-    <div class="row">
-        <div class="col-md-1 pagination">
-            <p>&nbsp;&nbsp; {{'PAGE' | translate}} &nbsp;</p>
-        </div>
-        <div class="col-md-1 pagination">
-            <input name="page-navigator-input-id" id="" type="text" class="page-input" ng-model="currentPage"  value="{{currentPage}}" style="width: 35px; height: 19px;">
-            / {{numPages}}
-        </div>
-        <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+<div id="pagingInfo" class="row padding-left-1p" style="margin-top: 5px;">
+    <div class="col-md-2 pagination">
+        <label class="" for="page-input-name">&nbsp;&nbsp; {{'PAGE' | translate}} &nbsp;</label>
+        <input name="page-input-name" id="page-input-name" type="text" class="page-input" ng-model="currentPage"  value="{{currentPage}}" style="width: 35px; height: 19px;">
+        / {{numPages}}
     </div>
+    <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="col-md-10 pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
 </div>
-
-<!--<pre>{{rows | json}}</pre>-->
+<button ng-click="save()">Save</button>
+<pre>{{rows | json}}</pre>
 <!--{{type}}-->
 <!--<pre>{{allrows[1].configModel.conflictMap | json}}</pre>-->
 

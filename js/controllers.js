@@ -179,6 +179,14 @@ dmApp.controller('WorkspaceCtrl', ['$scope', '$stateParams', 'DataManagerService
         current: 1,
         all: 10
     };
+
+    $scope.$on('saveData', function(event, data) {
+       $scope.saveData = data;
+    });
+    $scope.save = function() {
+        console.log($scope.saveData);
+    };
+
 }])
 
 dmApp.controller('JobDetailCtrl', ['$scope', '$stateParams', '$state', 'DataManagerService', '$uibModal', function($scope, $stateParams, $state, DataManagerService, $uibModal) {
@@ -236,10 +244,18 @@ dmApp.controller('JobDetailCtrl', ['$scope', '$stateParams', '$state', 'DataMana
             //$log.info('Modal dismissed at: ' + new Date());
         });
     }
+
+    $scope.$watch('rows', function() {
+        $scope.$emit('saveData', $scope.rows);
+    })
+
+    $scope.save = function() {
+        console.log($scope.rows)
+    }
 }]);
 
 dmApp.controller('SummaryCtrl', ['$scope', '$http', function($scope, $http) {
-    //$http.get('/portlets/commons/datamanager/js/test.json').success(function(data) {
+    //$http.get('/portlets/commons/datamanager/js/testExport.json').success(function(data) {
     //    $scope.cols = data.columns.slice(1);
     //    $scope.rows = data.result;
     //})

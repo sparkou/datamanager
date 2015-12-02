@@ -128,7 +128,7 @@
                 </a>
               </div>
             </li>
-            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'export'})}" role="menuitem">
+            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'export'}) || $state.includes('job', {type: 'export'})}" role="menuitem">
               <div class="icon icon-background" ui-sref="feature({type: 'export'})">
               </div>
               <div class="spaces-name">
@@ -138,7 +138,7 @@
                 </a>
               </div>
             </li>
-            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'import'})}" role="menuitem">
+            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'import'}) || $state.includes('job', {type: 'import'})}" role="menuitem">
               <div class="icon icon-background" ui-sref="feature({type: 'import'})">
               </div>
               <div class="spaces-name">
@@ -148,7 +148,7 @@
                 </a>
               </div>
             </li>
-            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'delete'})}" role="menuitem">
+            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'delete'}) || $state.includes('job', {type: 'delete'})}" role="menuitem">
               <div class="icon icon-background" ui-sref="feature({type: 'delete'})">
               </div>
               <div class="spaces-name">
@@ -163,9 +163,9 @@
       </nav>
 
       <main role="main" class="ng-scope">
-        <div style="overflow : auto; width: 1821px; height: 898px">
+        <!--<div style="overflow : auto; width: 1821px; height: 898px">-->
           <div class="row" ui-view=""></div>
-        </div>
+        <!--</div>-->
       </main>
     </section>
   </body>

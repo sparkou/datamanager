@@ -76,11 +76,13 @@
                 <div ng-hide="jobs.length">
                     <p class="bg-warning">No {{type}} Jobs Found</p>
                 </div>
-                <div id="pagingInfo" style="margin-top: 5px;">
-                    &nbsp;&nbsp; {{'PAGE' | translate}} &nbsp;
-                    <input name="page-navigator-input-id" id="page-navigator-input-id" type="text" class="page-navigator-input portlet-form-input-field" ng-model="currentPage"  value="{{currentPage}}" style="width: 35px; height: 19px;">
-                    / {{numPages}}
-                    <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+                <div id="pagingInfo" class="row padding-left-1p" style="margin-top: 5px;">
+                    <div class="col-md-2 pagination">
+                        <label class="" for="page-input-name">&nbsp;&nbsp; {{'PAGE' | translate}} &nbsp;</label>
+                        <input name="page-input-name" id="page-input-name" type="text" class="page-input" ng-model="currentPage"  value="{{currentPage}}" style="width: 35px; height: 19px;">
+                        / {{numPages}}
+                    </div>
+                    <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="col-md-10 pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
                 </div>
             </div>
         </div>
