@@ -35,9 +35,9 @@
             <div class="row">
                 <div class="col-md-12  max-height-700">
                     <div class="padding-left-14px">
-                        <h3>{{jobName}}</h3>
-                        <h5>{{'PARAM_STATUS' | translate: translationData}}: {{jobStatus}}</h5>
-                        <h5>{{'DESCRIPTION' | translate}}: {{description}}</h5>
+                        <h3>{{job.batchJobModel.jobName}}</h3>
+                        <h5>{{'PARAM_STATUS' | translate: translationData}}: {{job.batchJobModel.jobStatus}}</h5>
+                        <h5>{{'DESCRIPTION' | translate}}: {{job.batchJobModel.description}}</h5>
                     </div>
                     <div ui-tree id="tree-root" data-nodrag class="panel-body utility-item-group">
                         <ol ui-tree-nodes ng-model="data">

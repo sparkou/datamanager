@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" ng-model="keyName" placeholder="{{'FIND_BY_NAME' | translate }}"/>
                     </div>
                     <div class="col-md-6">
-                        <button type="button" class="btn btn-default" ng-click="newJob(type)">{{'NEW_PARAM_JOB' | translate: translationData}}</button>
+                        <button type="button" class="btn btn-default" ng-click="newJob()">{{'NEW_PARAM_JOB' | translate: translationData}}</button>
                     </div>
                 </div>
                 <table id="AccelaMainTable" class="AccelaMainTable" border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -44,12 +44,12 @@
                         </th>
                     </tr>
                     <tr ng-repeat="job in jobs">
-                        <td class="portlet-section-body"><a id="expLinkRow1" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})">{{job.batchJobModel.jobName}}</a></td>
+                        <td class="portlet-section-body"><a id="expLinkRow1" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})" ng-click="jobDetail(job)">{{job.batchJobModel.jobName}}</a></td>
                         <td class="portlet-section-body">{{job.batchJobModel.scheduleStatus}}</td>
                         <td class="portlet-section-body">{{job.batchJobModel.jobStatus}}</td>
                         <td class="portlet-section-body">{{job.batchJobModel.startDate}}</td>
                         <td class="portlet-section-body">{{job.batchJobModel.startTime}}</td>
-                        <td class="portlet-section-body">{{job.configModel.description}}</td>
+                        <td class="portlet-section-body">{{job.batchJobModel.description}}</td>
                         <td class="portlet-section-body">
                             <div class="task-filter-button dropdown" uib-dropdown is-open="isopen">
                                 <button id="exp-action-{{job.configModel.jobName}}" type="button" class="btn btn-default btn-filter" uib-dropdown-toggle ng-disabled="disabled">
@@ -57,7 +57,7 @@
                                 </button>
                                 <ul class="uib-dropdown-menu" role="menu" aria-labelledby="action-{{job.configModel.jobName}}">
                                     <li role="menuitem"><a href="#">{{'START' | translate}}</a></li>
-                                    <li role="menuitem"><a ng-click="schedule('sm')">{{'SCHEDULE' | translate}}</a></li>
+                                    <li role="menuitem"><a ng-click="schedule('sm', job)">{{'SCHEDULE' | translate}}</a></li>
                                     <li role="menuitem"><a href="#">{{'STOP' | translate}}</a></li>
                                     <li role="menuitem" ng-if="type == 'export'"><a href="#">{{'SAVE_AS' | translate}}</a></li>
                                     <li role="menuitem" ng-if="type == 'delete'"><a href="#">{{'BACK_UP' | translate}}</a></li>

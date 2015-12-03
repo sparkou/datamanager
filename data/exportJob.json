@@ -1,31 +1,35 @@
 [
   {
     "batchJobModel": {
+      "agency": "TestAgency",
       "jobName": "new UI model test",
       "jobStatus": "Complete",
       "scheduleStatus": "On Hold",
       "startDate": "start date",
-      "startTime": "start time"
+      "startTime": "start time",
+      "description": "This is a test export job"
     },
     "configModel": {
       "feature": "",
-      "jobType": "Data Manager Export",
-      "description": "This is a test export job"
+      "jobType": "export",
+      "email": "test@cc"
     },
     "result": []
   },
   {
     "batchJobModel": {
+      "agency": "TestAgency",
       "jobName": "new UI model test 2",
       "jobStatus": "Complete",
       "scheduleStatus": "On Hold",
       "startDate": "start date",
-      "startTime": "start time"
+      "startTime": "start time",
+      "description": "This is a test export job"
     },
     "configModel": {
       "feature": "",
-      "jobType": "Data Manager Export",
-      "description": "This is a test export job"
+      "jobType": "export",
+      "email": "test@cc"
     },
     "result": []
   }

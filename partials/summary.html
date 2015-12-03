@@ -44,7 +44,7 @@
                         <h5>{{'AGENCY' | translate}}:</h5>
                     </div>
                     <div class="col-md-6">
-                        <h5>{{ADDEV}}</h5>
+                        <h5>{{job.batchJobModel.agency}}</h5>
                     </div>
                 </div>
                 <div class="row padding-td-2">
@@ -68,7 +68,7 @@
                         <h5>{{'EMAIL' | translate}}:</h5>
                     </div>
                     <div class="col-md-6">
-                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Enter an E-mail" ng-model="job.email">
+                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Enter an E-mail" ng-model="job.configModel.email">
                     </div>
                 </div>
             </div>
@@ -157,7 +157,7 @@
                 </div>
                 <div class="row padding-td-2">
                     <div class="col-md-12">
-                        <textarea class="form-control" ng-model="description"></textarea>
+                        <textarea class="form-control" ng-model="job.batchJobModel.description">{{job.batchJobModel.description}}</textarea>
                     </div>
                 </div>
             </div>

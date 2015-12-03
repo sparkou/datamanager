@@ -8,27 +8,27 @@
         <div class="form-group" ng-class="{ 'has-error' : jobForm.jobName.$invalid && !jobForm.jobName.$pristine }">
             <label for="jobName" class="col-sm-2 control-label">{{'NAME' | translate}}</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="jobName" name="jobName" placeholder="{{'ENTER_A_NAME' | translate}}" ng-model="job.jobName" required>
+                <input type="text" class="form-control" id="jobName" name="jobName" placeholder="{{'ENTER_A_NAME' | translate}}" ng-model="job.batchJobModel.jobName" required>
                 <p ng-show="jobForm.jobName.$invalid && !jobForm.jobName.$pristine" class="help-block">{{'VALIDATE_IS_REQUIRED' | translate: translationData}}</p>
             </div>
         </div>
         <div class="form-group">
             <label for="agency" class="col-sm-2 control-label">{{'AGENCY' | translate}}</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="agency" placeholder="Agency" disabled="disabled" ng-model="job.agency">
+                <input type="text" class="form-control" id="agency" placeholder="Agency" disabled="disabled" ng-model="job.batchJobModel.agency">
             </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error' : jobForm.email.$invalid && !jobForm.email.$pristine }">
             <label for="inputEmail" class="col-sm-2 control-label">{{'EMAIL' | translate}}</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="{{'ENTER_AN_EMAIL' | translate}}" ng-model="job.email">
+                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="{{'ENTER_AN_EMAIL' | translate}}" ng-model="job.configModel.email">
                 <p ng-show="jobForm.email.$invalid && !jobForm.email.$pristine" class="help-block">{{'VALIDATE_EMAIL' | translate}}</p>
             </div>
         </div>
         <div class="form-group">
             <label for="description" class="col-sm-2 control-label">{{'DESCRIPTION' | translate}}</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="description" placeholder="{{'ENTER_A_DESCRIPTION' | translate}}" ng-model="job.description">
+                <input type="text" class="form-control" id="description" placeholder="{{'ENTER_A_DESCRIPTION' | translate}}" ng-model="job.batchJobModel.description">
             </div>
         </div>
     </form>

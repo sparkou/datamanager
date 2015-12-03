@@ -6,7 +6,7 @@ String.prototype.firstUpperCase=function(){
     return this.replace(/^\S/,function(s){return s.toUpperCase();});
 }
 
-dmApp.controller('JobListCtrl', ['$scope', '$stateParams', 'DataManagerService', '$resource', '$uibModal', '$log', function($scope, $stateParams, DataManagerService, $resource, $uibModal, $log) {
+dmApp.controller('JobListCtrl', ['$scope', '$stateParams', 'DataManagerService', '$resource', '$uibModal', '$log', '$rootScope', '$timeout', function($scope, $stateParams, DataManagerService, $resource, $uibModal, $log, $rootScope, $timeout) {
 
     var type = $stateParams.type;
     type = type.firstUpperCase();
@@ -39,59 +39,60 @@ dmApp.controller('JobListCtrl', ['$scope', '$stateParams', 'DataManagerService',
         jobType: type
     };
 
-    $scope.newJob = function(type) {
-        var job = {"jobName": "", "agency": "Test Agency", "email": "", "description": ""};
+    $scope.newJob = function() {
         var modalInstance = $uibModal.open({
             animation: false,
             templateUrl: 'partials/newJob.html',
             controller: 'JobModalCtrl',
             //size: size,
             resolve: {
-                job: function() {
-                    return job;
-                },
                 type: function() {
                     return type;
                 }
             }
         });
-        modalInstance.result.then(function (type) {
-            $scope.type = type;
+        modalInstance.result.then(function (data) {
+            $scope.jobs.push(data);
         }, function () {
             //$log.info('Modal dismissed at: ' + new Date());
         });
     };
 
-    $scope.schedule = function(size) {
+    $scope.schedule = function(size,job) {
         var modalInstance = $uibModal.open({
             animation: false,
             templateUrl: 'partials/schedule.html',
             controller: 'ScheduleModalCtrl',
             windowClass: 'app-modal-window',
             resolve: {
-
+                job: job
             }
         });
-        modalInstance.result.then(function (type) {
-            $scope.type = type;
+        modalInstance.result.then(function () {
+            $scope.job = job;
         }, function () {
             //$log.info('Modal dismissed at: ' + new Date());
         });
+        //console.log($scope.jobs);
+    };
+
+    $scope.jobDetail = function(job) {
+        $timeout(function() {
+            $rootScope.$broadcast('jobDetail', job);
+        }, 100)
     };
 
 }]);
 
-dmApp.controller('JobModalCtrl', function ($scope, $uibModalInstance, job, type) {
+dmApp.controller('JobModalCtrl', function ($scope, $uibModalInstance, type) {
 
     type = type.firstUpperCase();
     $scope.translationData = {
         jobType: type,
         value: 'Name'
     };
-    $scope.job = job;
     $scope.createJob = function () {
-        console.log(job);
-        $uibModalInstance.close();
+        $uibModalInstance.close($scope.job);
     };
 
     $scope.cancel = function () {
@@ -99,7 +100,7 @@ dmApp.controller('JobModalCtrl', function ($scope, $uibModalInstance, job, type)
     };
 });
 
-dmApp.controller('ScheduleModalCtrl', function ($scope, $uibModalInstance) {
+dmApp.controller('ScheduleModalCtrl', function ($scope, $uibModalInstance, job) {
 
     $scope.today = function() {
         $scope.dt = new Date();
@@ -154,7 +155,11 @@ dmApp.controller('ScheduleModalCtrl', function ($scope, $uibModalInstance) {
     };
 
     $scope.schedule = function () {
-        $uibModalInstance.close();
+
+        job.batchJobModel.scheduleDate = $scope.dt;
+        job.batchJobModel.scheduleTime = $scope.mytime;
+        job.batchJobModel.scheduleStatus = $scope.options.scheduleStatus;
+        $uibModalInstance.close(job);
     };
 
     $scope.cancel = function () {
@@ -165,7 +170,11 @@ dmApp.controller('ScheduleModalCtrl', function ($scope, $uibModalInstance) {
 
 
 
-dmApp.controller('WorkspaceCtrl', ['$scope', '$stateParams', 'DataManagerService', function($scope, $stateParams, DataManagerService) {
+dmApp.controller('WorkspaceCtrl', ['$scope', '$stateParams', 'DataManagerService', '$rootScope', function($scope, $stateParams, DataManagerService) {
+
+    $scope.$on('jobDetail', function(event, data) {
+        $scope.job = data;
+    });
     DataManagerService.getFeatures().then(function(data) {
         $scope.data = data
     });
@@ -183,8 +192,15 @@ dmApp.controller('WorkspaceCtrl', ['$scope', '$stateParams', 'DataManagerService
     $scope.$on('saveData', function(event, data) {
        $scope.saveData = data;
     });
+
+    $scope.$on('saveJob', function(event, data) {
+        console.log(data);
+        $scope.job = data;
+    });
+
     $scope.save = function() {
-        console.log($scope.saveData);
+        //console.log($scope.saveData);
+        console.log($scope.job);
     };
 
 }])
@@ -251,14 +267,23 @@ dmApp.controller('JobDetailCtrl', ['$scope', '$stateParams', '$state', 'DataMana
 
     $scope.save = function() {
         console.log($scope.rows)
+
     }
 }]);
 
 dmApp.controller('SummaryCtrl', ['$scope', '$http', function($scope, $http) {
-    //$http.get('/portlets/commons/datamanager/js/testExport.json').success(function(data) {
-    //    $scope.cols = data.columns.slice(1);
-    //    $scope.rows = data.result;
-    //})
+
+    $scope.$on('jobDetail', function(event, data) {
+        $scope.job = data;
+        var job = $scope.job;
+        $scope.mytime = job.batchJobModel.scheduleTime;
+        $scope.dt = job.batchJobModel.scheduleDate;
+        $scope.options.scheduleStatus = job.batchJobModel.scheduleStatus;
+    });
+
+    $scope.$watch('job', function() {
+        $scope.$emit('saveJob', $scope.job);
+    })
 
     $scope.today = function() {
         $scope.dt = new Date();
@@ -300,7 +325,6 @@ dmApp.controller('SummaryCtrl', ['$scope', '$http', function($scope, $http) {
         ];
 
     $scope.mytime = new Date();
-
     $scope.hstep = 1;
     $scope.mstep = 15;
     $scope.ismeridian = true;

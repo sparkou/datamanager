@@ -28,16 +28,6 @@ dmApp.config(function($stateProvider){
             templateUrl: "partials/summary.html",
             controller: "SummaryCtrl"
         })
-        //.state('job.impSummary', {
-        //    url: "/summary",
-        //    templateUrl: "partials/impSummary.html",
-        //    controller: ""
-        //})
-        //.state('job.delSummary', {
-        //    url: "/summary",
-        //    templateUrl: "partials/delSummary.html",
-        //    controller: ""
-        //})
         .state('job.aca', {
             url: "/aca",
             templateUrl: "partials/acaPage.html",
