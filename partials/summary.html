@@ -127,10 +127,10 @@
                     </div>
                     <div class="col-md-6">
                         <p class="input-group">
-                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                                    <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                                    </span>
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="job.batchJobModel.scheduleDate" is-open="status.opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
                         </p>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                         <h5>{{'TIME' | translate}}:</h5>
                     </div>
                     <div class="col-md-6">
-                        <uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" show-spinners="false"></uib-timepicker>
+                        <uib-timepicker ng-model="job.batchJobModel.scheduleTime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" show-spinners="false"></uib-timepicker>
                     </div>
                 </div>
                 <div class="row padding-td-2">
@@ -147,7 +147,7 @@
                         <h5>{{'SCHEDULE_STATUS' | translate}}:</h5>
                     </div>
                     <div class="col-md-6">
-                        <select class="form-control" ng-model="options.scheduleStatus" ng-options="opt for opt in options.status"></select>
+                        <select class="form-control" ng-model="job.batchJobModel.scheduleStatus" ng-options="opt for opt in options.status"></select>
                     </div>
                 </div>
                 <div class="row padding-top-8 line">

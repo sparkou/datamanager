@@ -26,7 +26,7 @@ function dmService($q, $http, apiService, $log) {
 
     function getFeatures() {
         var deferred = $q.defer();
-        $http.get('/datamanager/js/treeData.json').success(function(data) {
+        $http.get('/datamanager/data/treeData.json').success(function(data) {
             return deferred.resolve(data);
         })
         return deferred.promise;
@@ -34,7 +34,7 @@ function dmService($q, $http, apiService, $log) {
 
     function getColDef() {
         var deferred = $q.defer();
-        $http.get('/datamanager/js/colDef.json').success(function(data) {
+        $http.get('/datamanager/data/colDef.json').success(function(data) {
             return deferred.resolve(data);
         })
         return deferred.promise;

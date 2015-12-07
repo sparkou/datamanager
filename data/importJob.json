@@ -1,31 +1,35 @@
 [
   {
     "batchJobModel": {
-      "jobName": "import job list 1",
+      "agency": "TestAgency",
+      "jobName": "new UI model test",
       "jobStatus": "Complete",
-      "scheduleStatus": "On Hold",
-      "startDate": "start date",
-      "startTime": "start time"
+      "scheduleStatus": "",
+      "scheduleDate": "",
+      "scheduleTime": "",
+      "description": "This is a test import job"
     },
     "configModel": {
       "feature": "",
-      "jobType": "Data Manager Export",
-      "description": "This is a test import job"
+      "jobType": "import",
+      "email": "test@cc"
     },
     "result": []
   },
   {
     "batchJobModel": {
-      "jobName": "import job list 2",
+      "agency": "TestAgency",
+      "jobName": "new UI model test 2",
       "jobStatus": "Complete",
-      "scheduleStatus": "On Hold",
-      "startDate": "start date",
-      "startTime": "start time"
+      "scheduleStatus": "",
+      "scheduleDate": "",
+      "scheduleTime": "",
+      "description": "This is a test import job"
     },
     "configModel": {
       "feature": "",
-      "jobType": "Data Manager Export",
-      "description": "This is a test import job"
+      "jobType": "import",
+      "email": "test@cc"
     },
     "result": []
   }

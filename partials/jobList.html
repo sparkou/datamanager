@@ -47,8 +47,8 @@
                         <td class="portlet-section-body"><a id="expLinkRow1" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})" ng-click="jobDetail(job)">{{job.batchJobModel.jobName}}</a></td>
                         <td class="portlet-section-body">{{job.batchJobModel.scheduleStatus}}</td>
                         <td class="portlet-section-body">{{job.batchJobModel.jobStatus}}</td>
-                        <td class="portlet-section-body">{{job.batchJobModel.startDate}}</td>
-                        <td class="portlet-section-body">{{job.batchJobModel.startTime}}</td>
+                        <td class="portlet-section-body">{{job.batchJobModel.scheduleDate | date: 'yyyy-MM-dd'}}</td>
+                        <td class="portlet-section-body">{{job.batchJobModel.scheduleTime | date: 'h:mma'}}</td>
                         <td class="portlet-section-body">{{job.batchJobModel.description}}</td>
                         <td class="portlet-section-body">
                             <div class="task-filter-button dropdown" uib-dropdown is-open="isopen">
