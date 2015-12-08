@@ -2,7 +2,7 @@
   {
     "batchJobModel": {
       "agency": "TestAgency",
-      "jobName": "new UI model test",
+      "jobName": "import job test",
       "jobStatus": "Complete",
       "scheduleStatus": "",
       "scheduleDate": "",
@@ -19,7 +19,7 @@
   {
     "batchJobModel": {
       "agency": "TestAgency",
-      "jobName": "new UI model test 2",
+      "jobName": "import test 2",
       "jobStatus": "Complete",
       "scheduleStatus": "",
       "scheduleDate": "",

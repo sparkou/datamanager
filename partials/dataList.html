@@ -58,8 +58,10 @@
     </div>
     <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="col-md-10 pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
 </div>
-<button ng-click="save()">Save</button>
-<pre>{{rows | json}}</pre>
+<button class="btn btn-default" ng-click="save()">Log Rows</button>
+<div style="overflow: scroll" class="max-height-700">
+    <pre>{{rows | json}}</pre>
+</div>
 <!--{{type}}-->
 <!--<pre>{{allrows[1].configModel.conflictMap | json}}</pre>-->
 

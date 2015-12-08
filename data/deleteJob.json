@@ -2,12 +2,12 @@
   {
     "batchJobModel": {
       "agency": "TestAgency",
-      "jobName": "new UI model test",
+      "jobName": "delete job test",
       "jobStatus": "Complete",
       "scheduleStatus": "",
       "scheduleDate": "",
       "scheduleTime": "",
-      "description": "This is a test export job"
+      "description": "This is a test delete job"
     },
     "configModel": {
       "feature": "",
@@ -19,12 +19,12 @@
   {
     "batchJobModel": {
       "agency": "TestAgency",
-      "jobName": "new UI model test 2",
+      "jobName": "delete job",
       "jobStatus": "Complete",
       "scheduleStatus": "",
       "scheduleDate": "",
       "scheduleTime": "",
-      "description": "This is a test export job"
+      "description": "This is a test delete job"
     },
     "configModel": {
       "feature": "",

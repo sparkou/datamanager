@@ -23,6 +23,7 @@
   <script src="js/app.js"></script>
   <script src="js/service/apiService.js"></script>
   <script src="js/service/services.js"></script>
+  <script src="js/controller/GlobalCtrl.js"></script>
   <script src="js/controller/ModalCtrl.js"></script>
   <script src="js/controller/JobListCtrl.js"></script>
   <script src="js/controller/WorkspaceCtrl.js"></script>
@@ -31,7 +32,7 @@
 
 
 </head>
-  <body>
+  <body ng-controller="GlobalCtrl">
     <header class="application-bar layer-2">
       <div class="pull-left">
         <a href="#" class="agency">BPTDEV</a>
@@ -41,10 +42,11 @@
       <div class="pull-right">
         <a href="" class="alerts"></a>
         <div class="environment dropdown" uib-dropdown="" on-toggle="toggled(open)">
-          <a aria-expanded="false" aria-haspopup="true" uib-dropdown-toggle="" tabindex="100">
-            PROD
-            <span class="custom-caret" role="presentation"></span>
-          </a>
+          <!--<a aria-expanded="false" aria-haspopup="true" uib-dropdown-toggle="" tabindex="100">-->
+            <!--PROD-->
+            <!--<span class="custom-caret" role="presentation"></span>-->
+          <!--</a>-->
+          <select ng-model="options.lang" ng-options="opt for opt in options.langs" ng-click="changeLang(options.lang)"></select>
           <!--<ul class="dropdown-menu" role="menu">-->
             <!--<li role="menuitem" class="clearfix">-->
               <!--<div class="pull-left">-->
@@ -57,8 +59,21 @@
           <!--</ul>-->
         </div>
 
-        <div class="settings" id="settings">
-          <a onclick="showSettings()" aria-expanded="true" class="dropdown-toggle" aria-haspopup="true" data-toggle="dropdown" tabindex="100"></a>
+        <div class="settings" id="settings" uib-dropdown is-open="isopen">
+          <a class="dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled"></a>
+
+
+            <ul class="uib-dropdown-menu" role="menu" aria-labelledby="">
+              <li role="menuitem">
+                <!--<select class="form-control" ng-model="options.lang" ng-options="opt for opt in options.langs"></select>-->
+                <!--<a ng-click="changeLang('zh-cn')">Switch to Chinese</a>-->
+              </li>
+              <li role="menuitem"><a href="#">Placeholder</a></li>
+              <li role="menuitem"><a href="#">Log Out</a></li>
+            </ul>
+
+
+
           <!--<ul class="dropdown-menu" role="menu">-->
             <!--<li role="menuitem" class="clearfix " ng-repeat="link in applicationBar.links">-->
               <!--<div class="pull-left">-->

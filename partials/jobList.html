@@ -43,7 +43,7 @@
                             <a href="#" target="_self">{{'ACTIONS' | translate}}</a>
                         </th>
                     </tr>
-                    <tr ng-repeat="job in jobs">
+                    <tr ng-repeat="job in jobs | filter: keyName">
                         <td class="portlet-section-body"><a id="expLinkRow1" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})" ng-click="jobDetail(job)">{{job.batchJobModel.jobName}}</a></td>
                         <td class="portlet-section-body">{{job.batchJobModel.scheduleStatus}}</td>
                         <td class="portlet-section-body">{{job.batchJobModel.jobStatus}}</td>

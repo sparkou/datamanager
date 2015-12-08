@@ -6,7 +6,7 @@ String.prototype.firstUpperCase=function(){
     return this.replace(/^\S/,function(s){return s.toUpperCase();});
 }
 
-dmApp.controller('WorkspaceCtrl', ['$scope', '$stateParams', 'DataManagerService', '$rootScope', function($scope, $stateParams, DataManagerService) {
+dmApp.controller('WorkspaceCtrl', ['$scope', '$stateParams', 'DataManagerService', '$rootScope', '$state', function($scope, $stateParams, DataManagerService, $rootScope, $state) {
 
     $scope.$on('jobDetail', function(event, data) {
         $scope.job = data;
