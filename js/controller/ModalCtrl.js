@@ -22,6 +22,17 @@ dmApp.controller('JobModalCtrl', function ($scope, $uibModalInstance, type) {
     };
 });
 
+dmApp.controller('ServerModalCtrl', function ($scope, $uibModalInstance) {
+
+    $scope.createServer = function () {
+        $uibModalInstance.close($scope.server);
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+});
+
 dmApp.controller('ScheduleModalCtrl', function ($scope, $uibModalInstance, job) {
 
     $scope.today = function() {

@@ -9,6 +9,7 @@ String.prototype.firstUpperCase=function(){
 dmApp.controller('JobListCtrl', ['$scope', '$stateParams', 'DataManagerService', '$resource', '$uibModal', '$log', '$rootScope', '$timeout', function($scope, $stateParams, DataManagerService, $resource, $uibModal, $log, $rootScope, $timeout) {
 
     var type = $stateParams.type;
+    console.log(type);
     type = type.firstUpperCase();
     DataManagerService.getJobs(type).then(function(data) {
         $scope.jobs = data;

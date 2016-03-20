@@ -7,6 +7,16 @@ dmApp.config(function($stateProvider){
             url: "/home",
             templateUrl: "partials/home.html"
         })
+        .state('newDM', {
+            url: "/newDM",
+            templateUrl: "partials/newDM.html",
+            controller: "ServerListCtrl"
+        })
+        .state('export', {
+            url: "/:server/:agency/:type/list",
+            templateUrl: "partials/jobList.html",
+            controller: "JobListCtrl"
+        })
         .state('feature', {
             url: "/:type",
             templateUrl: "partials/jobList.html",

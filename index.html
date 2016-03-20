@@ -29,6 +29,7 @@
   <script src="js/controller/WorkspaceCtrl.js"></script>
   <script src="js/controller/JobDetailCtrl.js"></script>
   <script src="js/controller/SummaryCtrl.js"></script>
+  <script src="js/controller/ServerListCtrl.js"></script>
 
 
 </head>
@@ -42,6 +43,7 @@
       <div class="pull-right">
         <a href="" class="alerts"></a>
         <div class="environment dropdown" uib-dropdown="" on-toggle="toggled(open)">
+<<<<<<< Updated upstream
           <!--<a aria-expanded="false" aria-haspopup="true" uib-dropdown-toggle="" tabindex="100">-->
             <!--PROD-->
             <!--<span class="custom-caret" role="presentation"></span>-->
@@ -100,6 +102,16 @@
               <!--</div>-->
             <!--</li>-->
           <!--</ul>-->
+=======
+          <a aria-expanded="false" aria-haspopup="true" uib-dropdown-toggle="" tabindex="100">
+            PROD
+            <span class="custom-caret" role="presentation"></span>
+          </a>
+        </div>
+
+        <div class="settings" id="settings">
+          <a onclick="showSettings()" aria-expanded="true" class="dropdown-toggle" aria-haspopup="true" data-toggle="dropdown" tabindex="100"></a>
+>>>>>>> Stashed changes
         </div>
       </div>
     </header>
@@ -116,25 +128,6 @@
         <div class="content"> Slide Out Content Template</div>
       </div>
       <nav class="menu-bar layer-3" role="navigation" onload="menubar.onload()">
-        <!--<div id="main-menu" role="navigation" aria-label="tbd">-->
-          <!--<ul role="menu">-->
-            <!--<li role="menuitem" class="dashboard-tile active">-->
-              <!--<a ui-sref="home" class="icon ng-isolate-scope tasks" aria-label="tbd" tabindex="100"></a>-->
-            <!--</li>-->
-            <!--<li role="menuitem" class="map-tile hidden">-->
-              <!--<a ui-sref="home" class="icon icon-map" aria-label="tbd" tabindex="100"></a>-->
-            <!--</li>-->
-            <!--<li role="menuitem" class="launchpad-tile no-bottom-border">-->
-              <!--<a ui-sref="feature({type: 'export'})" class="icon icon-new" aria-label="tbd" aria-haspopup="true" aria-expanded="false" tabindex="100"></a>-->
-            <!--</li>-->
-            <!--<li role="menuitem" class="launchpad-tile no-bottom-border">-->
-              <!--<a ui-sref="feature({type: 'import'})" class="icon icon-new" aria-label="tbd" aria-haspopup="true" aria-expanded="false" tabindex="100"></a>-->
-            <!--</li>-->
-            <!--<li role="menuitem" class="launchpad-tile no-bottom-border">-->
-              <!--<a ui-sref="feature({type: 'delete'})" class="icon icon-new" aria-label="tbd" aria-haspopup="true" aria-expanded="false" tabindex="100"></a>-->
-            <!--</li>-->
-          <!--</ul>-->
-        <!--</div>-->
         <div id="spaces-menu">
           <ul class="text-center" role="menu">
             <li class="spaces" ng-class="{'active': $state.includes('home')}" role="menuitem">
@@ -173,6 +166,16 @@
               <div class="spaces-name">
                 <a ui-sref="feature({type: 'delete'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">
                   <div class="display-ellipsis">Delete</div>
+                  <div class="display-ellipsis"></div>
+                </a>
+              </div>
+            </li>
+            <li class="spaces" ng-class="{'active': $state.includes('newDM')}" role="menuitem">
+              <div class="icon icon-background" ui-sref="newDM">
+              </div>
+              <div class="spaces-name">
+                <a ui-sref="newDM" ng-disabled="" aria-label="tbd" tabindex="100" class="">
+                  <div class="display-ellipsis">New DM</div>
                   <div class="display-ellipsis"></div>
                 </a>
               </div>

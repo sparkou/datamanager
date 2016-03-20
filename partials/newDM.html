@@ -1,0 +1,69 @@
+<header class="header">
+    <h1>
+        <span>{{'SERVER_LIST' | translate: translationData}}</span>
+    </h1>
+    <a class="refresh" href="javascript: location.reload();"></a>
+</header>
+<div class="work-space">
+    <div class="row padding-left-1p padding-right-1p">
+        <div class="col-md-12">
+            <div id="">
+                <div class="row padding-top-8">
+                    <div class="col-md-4">
+                        <input type="text" class="hidden" ng-model="alljobs"/>
+                        <input type="text" class="form-control" ng-model="keyName" placeholder="{{'FIND_BY_NAME' | translate }}"/>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-default" ng-click="newServer()">{{'NEW_SERVER' | translate: translationData}}</button>
+                    </div>
+                </div>
+                <table id="AccelaMainTable" class="AccelaMainTable" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody>
+                    <tr></tr>
+                    <tr width="">
+                        <th class="portlet-section-subheader" width="150" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'SERVER_NAME' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="150" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'AGENCY' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="120" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'STATUS' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="100" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'COMPARE' | translate}}</a>
+                        </th>
+                        <th class="portlet-section-subheader" width="200" align="left" valign="top" nowrap="">
+                            <a href="#" target="_self">{{'EXPORT_HISTORY' | translate}}</a>
+                        </th>
+                    </tr>
+                    <tr ng-repeat="server in servers">
+                        <td class="portlet-section-body"><a id="" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})" ng-click="jobDetail(job)">{{server.name}}</a></td>
+                        <td class="portlet-section-body"><a id="" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})" ng-click="jobDetail(job)">{{server.agency}}</a></td>
+                        <td class="portlet-section-body">{{server.status}}</td>
+                        <td class="portlet-section-body">
+                            <button class="btn btn-default btn-filter">{{'COMPARE' | translate}}</button>
+                        </td>
+                        <td class="portlet-section-body">
+                            <button ng-click="showExportHistory(server.name, server.agency)" class="btn btn-default btn-filter">{{'EXPORT_HISTORY' | translate}}</button>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                    </tbody>
+                </table>
+                <div ng-hide="servers.length">
+                    <p class="bg-warning">No Servers Found</p>
+                </div>
+                <div id="pagingInfo" class="row padding-left-1p" style="margin-top: 5px;">
+                    <div class="col-md-2 pagination">
+                        <label class="" for="page-input-name">&nbsp;&nbsp; {{'PAGE' | translate}} &nbsp;</label>
+                        <input name="page-input-name" id="page-input-name" type="text" class="page-input" ng-model="currentPage"  value="{{currentPage}}" style="width: 35px; height: 19px;">
+                        / {{numPages}}
+                    </div>
+                    <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="col-md-10 pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
