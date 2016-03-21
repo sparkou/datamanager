@@ -64,23 +64,49 @@ dmApp.controller('ServerListCtrl', ['$scope', '$stateParams', 'DataManagerServic
         });
     };
 
-    //$scope.compare = function(size,job) {
-    //    var modalInstance = $uibModal.open({
-    //        animation: false,
-    //        templateUrl: 'partials/schedule.html',
-    //        controller: 'ScheduleModalCtrl',
-    //        windowClass: 'app-modal-window',
-    //        resolve: {
-    //            job: job
-    //        }
-    //    });
-    //    modalInstance.result.then(function () {
-    //        $scope.job = job;
-    //    }, function () {
-    //        //$log.info('Modal dismissed at: ' + new Date());
-    //    });
-    //    //console.log($scope.jobs);
-    //};
+
+    $scope.targetServer = null;
+    $scope.compareConfig = function(size,server) {
+        var modalInstance = $uibModal.open({
+            animation: false,
+            templateUrl: 'partials/compareConfirm.html',
+            controller: 'compareConfirmModalCtrl',
+            //windowClass: 'app-modal-window',
+            resolve: {
+                server: server
+            }
+        });
+
+        modalInstance.result.then(function (data) {
+            $scope.targetServer = data
+            $scope.openCompare();
+        }, function () {
+            //$log.info('Modal dismissed at: ' + new Date());
+        });
+        //console.log($scope.jobs);
+    };
+    //$scope.$watch('targetServer', function() {
+    //    console.log($scope.targetServer);
+    //    $scope.openCompare();
+    //})
+
+    $scope.openCompare = function() {
+        var modalInstance = $uibModal.open({
+            animation: false,
+            templateUrl: 'partials/conflict.html',
+            controller: 'ConflictModalCtrl',
+            //windowClass: 'app-modal-window',
+            //size: size,
+            resolve: {
+
+            }
+        });
+        modalInstance.result.then(function () {
+            //$scope.type = type;
+        }, function () {
+            //$log.info('Modal dismissed at: ' + new Date());
+        });
+    }
     //
     //$scope.jobDetail = function(job) {
     //    $timeout(function() {

@@ -43,75 +43,16 @@
       <div class="pull-right">
         <a href="" class="alerts"></a>
         <div class="environment dropdown" uib-dropdown="" on-toggle="toggled(open)">
-<<<<<<< Updated upstream
-          <!--<a aria-expanded="false" aria-haspopup="true" uib-dropdown-toggle="" tabindex="100">-->
-            <!--PROD-->
-            <!--<span class="custom-caret" role="presentation"></span>-->
-          <!--</a>-->
           <select ng-model="options.lang" ng-options="opt for opt in options.langs" ng-click="changeLang(options.lang)"></select>
-          <!--<ul class="dropdown-menu" role="menu">-->
-            <!--<li role="menuitem" class="clearfix">-->
-              <!--<div class="pull-left">-->
-                <!--<a href="#" tabindex="100">Accela</a>-->
-              <!--</div>-->
-              <!--<div class="pull-right">-->
-                <!--<span class="glyphicon glyphicon-ok"></span>-->
-              <!--</div>-->
-            <!--</li>-->
-          <!--</ul>-->
         </div>
-
         <div class="settings" id="settings" uib-dropdown is-open="isopen">
           <a class="dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled"></a>
-
-
             <ul class="uib-dropdown-menu" role="menu" aria-labelledby="">
               <li role="menuitem">
-                <!--<select class="form-control" ng-model="options.lang" ng-options="opt for opt in options.langs"></select>-->
-                <!--<a ng-click="changeLang('zh-cn')">Switch to Chinese</a>-->
               </li>
               <li role="menuitem"><a href="#">Placeholder</a></li>
               <li role="menuitem"><a href="#">Log Out</a></li>
             </ul>
-
-
-
-          <!--<ul class="dropdown-menu" role="menu">-->
-            <!--<li role="menuitem" class="clearfix " ng-repeat="link in applicationBar.links">-->
-              <!--<div class="pull-left">-->
-                <!--<a ng-click="openAppBarLink(link)" class="ng-binding">Administration</a>-->
-              <!--</div>-->
-            <!--</li>-->
-            <!--<li role="menuitem" class="clearfix " ng-repeat="link in applicationBar.links">-->
-              <!--<div class="pull-left">-->
-                <!--<a ng-click="openAppBarLink(link)" class="ng-binding">Classic Administration</a>-->
-              <!--</div>-->
-            <!--</li>-->
-            <!--<li role="menuitem" class="clearfix " ng-repeat="link in applicationBar.links">-->
-              <!--<div class="pull-left">-->
-                <!--<a ng-click="openAppBarLink(link)" class="ng-binding">Switch to V360</a>-->
-              <!--</div>-->
-            <!--</li>-->
-            <!--<li role="menuitem" class="clearfix ">-->
-              <!--<div class="pull-left"><a onmouseout="">Sign Out</a>-->
-              <!--</div>-->
-            <!--</li>-->
-            <!--<li role="menuitem" class="clearfix hidden">-->
-              <!--<div class="pull-left">-->
-                <!--<a ng-click="openAppBarLink({ name: 'Portlet Debug' })" class="ng-binding">Portlet Debug</a>-->
-              <!--</div>-->
-            <!--</li>-->
-          <!--</ul>-->
-=======
-          <a aria-expanded="false" aria-haspopup="true" uib-dropdown-toggle="" tabindex="100">
-            PROD
-            <span class="custom-caret" role="presentation"></span>
-          </a>
-        </div>
-
-        <div class="settings" id="settings">
-          <a onclick="showSettings()" aria-expanded="true" class="dropdown-toggle" aria-haspopup="true" data-toggle="dropdown" tabindex="100"></a>
->>>>>>> Stashed changes
         </div>
       </div>
     </header>

@@ -1,0 +1,37 @@
+
+<div class="modal-header">
+    <h2 class="modal-title">{{'SCHEDULE' | translate}}</h2>
+</div>
+<div class="modal-body">
+
+    <div class="row padding-td-2">
+        <div class="col-md-3">
+            <h5>{{'CURRENT_ENVIRONMENT' | translate}}:</h5>
+        </div>
+        <div class="col-md-9">
+            <p class="input-group">
+                <input type="text" class="form-control" placeholder="Current Agency" disabled="disabled">
+            </p>
+        </div>
+    </div>
+    <div class="row padding-td-2">
+        <div class="col-md-3">
+            <h5>{{'SELECT_SERVER' | translate}}:</h5>
+        </div>
+        <div class="col-md-9">
+            <select class="form-control" ng-model="options.server" ng-options="opt for opt in options.servers"></select>
+        </div>
+    </div>
+    <div class="row padding-td-2">
+        <div class="col-md-3">
+            <h5>{{'SELECT_AGENCY' | translate}}:</h5>
+        </div>
+        <div class="col-md-9">
+            <select class="form-control" ng-model="options.agency" ng-options="opt for opt in options.agencies"></select>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()" ng-disabled="">{{'COMPARE' | translate}}</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">{{'CANCEL' | translate}}</button>
+</div>

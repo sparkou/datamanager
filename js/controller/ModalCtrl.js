@@ -33,6 +33,31 @@ dmApp.controller('ServerModalCtrl', function ($scope, $uibModalInstance) {
     };
 });
 
+dmApp.controller('compareConfirmModalCtrl', function ($scope, $uibModalInstance, server) {
+
+    $scope.options = {
+        server: 'AzureQA',
+        servers: ['AzureQA', 'AccelaQA'],
+        agency: 'PETALUMA',
+        agencies: ['FLAGSTAFF', 'PETALUMA']
+    };
+    $scope.targetServer = {server: 'AccelaQA', agency: 'PETALUMA'}
+    $scope.ok = function () {
+
+        console.log('Server :' + server.name + ' - ' + server.agency);
+        console.log('Target Server: ' + $scope.targetServer.server + ' - ' + $scope.targetServer.agency);
+
+        $uibModalInstance.close($scope.targetServer);
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+});
+
+
+
+
 dmApp.controller('ScheduleModalCtrl', function ($scope, $uibModalInstance, job) {
 
     $scope.today = function() {

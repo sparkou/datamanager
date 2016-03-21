@@ -38,11 +38,11 @@
                         </th>
                     </tr>
                     <tr ng-repeat="server in servers">
-                        <td class="portlet-section-body"><a id="" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})" ng-click="jobDetail(job)">{{server.name}}</a></td>
-                        <td class="portlet-section-body"><a id="" ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})" ng-click="jobDetail(job)">{{server.agency}}</a></td>
+                        <td class="portlet-section-body"><a ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})" ng-click="jobDetail(job)">{{server.name}}</a></td>
+                        <td class="portlet-section-body"><a ui-sref="job.summary({type: type, jobName: job.batchJobModel.jobName})" ng-click="jobDetail(job)">{{server.agency}}</a></td>
                         <td class="portlet-section-body">{{server.status}}</td>
                         <td class="portlet-section-body">
-                            <button class="btn btn-default btn-filter">{{'COMPARE' | translate}}</button>
+                            <button ng-click="compareConfig(server.name, server)" class="btn btn-default btn-filter">{{'COMPARE' | translate}}</button>
                         </td>
                         <td class="portlet-section-body">
                             <button ng-click="showExportHistory(server.name, server.agency)" class="btn btn-default btn-filter">{{'EXPORT_HISTORY' | translate}}</button>
