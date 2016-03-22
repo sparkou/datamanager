@@ -78,7 +78,9 @@ dmApp.controller('ServerListCtrl', ['$scope', '$stateParams', 'DataManagerServic
         });
 
         modalInstance.result.then(function (data) {
-            $scope.targetServer = data
+            $scope.targetServer = data;
+            $timeout(10000);
+
             $scope.openCompare();
         }, function () {
             //$log.info('Modal dismissed at: ' + new Date());

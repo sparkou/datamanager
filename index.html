@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/octicons.min.css">
   <link rel="stylesheet" href="css/demo.css">
 
-  <script src="js/angular/angular.js"></script>
+  <script src="js/angular/angular.min.js"></script>
   <script src="js/angular/angular-ui-router.js"></script>
   <script src="js/angular/angular-resource.js"></script>
   <script src="js/angular/angular-translate.js"></script>
@@ -47,9 +47,9 @@
   <body ng-controller="GlobalCtrl">
     <header class="application-bar layer-2">
       <div class="pull-left">
-        <a href="#" class="agency">BPTDEV</a>
+        <a href="#" class="agency">Data Manager</a>
         <span class="divider" role="presentation">I</span>
-        <span class="product">Accela Automation</span>
+        <span class="product">Civic Platform</span>
       </div>
       <div class="pull-right">
         <a href="" class="alerts"></a>
@@ -92,36 +92,36 @@
                 </a>
               </div>
             </li>
-            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'export'}) || $state.includes('job', {type: 'export'})}" role="menuitem">
-              <div class="icon icon-background" ui-sref="feature({type: 'export'})">
-              </div>
-              <div class="spaces-name">
-                <a ui-sref="feature({type: 'export'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">
-                  <div class="display-ellipsis">Export</div>
-                  <div class="display-ellipsis"></div>
-                </a>
-              </div>
-            </li>
-            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'import'}) || $state.includes('job', {type: 'import'})}" role="menuitem">
-              <div class="icon icon-background" ui-sref="feature({type: 'import'})">
-              </div>
-              <div class="spaces-name">
-                <a ui-sref="feature({type: 'import'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">
-                  <div class="display-ellipsis">Import</div>
-                  <div class="display-ellipsis"></div>
-                </a>
-              </div>
-            </li>
-            <li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'delete'}) || $state.includes('job', {type: 'delete'})}" role="menuitem">
-              <div class="icon icon-background" ui-sref="feature({type: 'delete'})">
-              </div>
-              <div class="spaces-name">
-                <a ui-sref="feature({type: 'delete'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">
-                  <div class="display-ellipsis">Delete</div>
-                  <div class="display-ellipsis"></div>
-                </a>
-              </div>
-            </li>
+            <!--<li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'export'}) || $state.includes('job', {type: 'export'})}" role="menuitem">-->
+              <!--<div class="icon icon-background" ui-sref="feature({type: 'export'})">-->
+              <!--</div>-->
+              <!--<div class="spaces-name">-->
+                <!--<a ui-sref="feature({type: 'export'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">-->
+                  <!--<div class="display-ellipsis">Export</div>-->
+                  <!--<div class="display-ellipsis"></div>-->
+                <!--</a>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'import'}) || $state.includes('job', {type: 'import'})}" role="menuitem">-->
+              <!--<div class="icon icon-background" ui-sref="feature({type: 'import'})">-->
+              <!--</div>-->
+              <!--<div class="spaces-name">-->
+                <!--<a ui-sref="feature({type: 'import'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">-->
+                  <!--<div class="display-ellipsis">Import</div>-->
+                  <!--<div class="display-ellipsis"></div>-->
+                <!--</a>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li class="spaces" ng-class="{'active': $state.includes('feature', {type: 'delete'}) || $state.includes('job', {type: 'delete'})}" role="menuitem">-->
+              <!--<div class="icon icon-background" ui-sref="feature({type: 'delete'})">-->
+              <!--</div>-->
+              <!--<div class="spaces-name">-->
+                <!--<a ui-sref="feature({type: 'delete'})" ng-disabled="" aria-label="tbd" tabindex="100" class="">-->
+                  <!--<div class="display-ellipsis">Delete</div>-->
+                  <!--<div class="display-ellipsis"></div>-->
+                <!--</a>-->
+              <!--</div>-->
+            <!--</li>-->
             <li class="spaces" ng-class="{'active': $state.includes('newDM')}" role="menuitem">
               <div class="icon icon-background" ui-sref="newDM">
               </div>
