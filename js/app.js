@@ -1,6 +1,6 @@
 'use strict';
 
-var dmApp = angular.module('dmApp', ['ui.router', 'ui.bootstrap', 'ui.tree', 'ngResource', 'pascalprecht.translate'])
+var dmApp = angular.module('dmApp', ['ui.router', 'ui.bootstrap', 'ui.tree', 'ngResource', 'pascalprecht.translate', 'ngMaterial', 'diff-match-patch'])
 dmApp.config(function($stateProvider){
     $stateProvider
         .state('home', {
@@ -60,6 +60,11 @@ dmApp.config(['$translateProvider', function ($translateProvider) {
     // Tell the module what language to use by default
     $translateProvider.preferredLanguage('en-us');
 }]);
+dmApp.config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+        .primaryPalette('indigo')
+        .accentPalette('blue');
+});
 
 
 

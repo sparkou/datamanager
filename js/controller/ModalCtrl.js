@@ -103,7 +103,29 @@ dmApp.controller('ScheduleModalCtrl', function ($scope, $uibModalInstance, job) 
 
 dmApp.controller('ConflictModalCtrl', function ($scope, $uibModalInstance) {
 
-    //type = type.firstUpperCase();
+
+    $scope.left = ["I am the very model of a modern Major-General,"
+    ].join('\n');
+
+    $scope.right = ["I am the very model of a cartoon individual,"
+    ].join('\n');
+    $scope.printL = 'left';
+    $scope.printR = 'right';
+    $scope.options = {
+        attrs: {
+            'insert': {
+                'data-attr': 'insert',
+                'class': 'insertion'
+            },
+            'delete': {
+                'data-attr': 'delete'
+            },
+            'equal': {
+                'data-attr': 'equal'
+            }
+        }
+    };
+
     $scope.translationData = {
         //jobType: type,
         //value: 'Name'

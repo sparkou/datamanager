@@ -96,7 +96,7 @@ dmApp.controller('ServerListCtrl', ['$scope', '$stateParams', 'DataManagerServic
             templateUrl: 'partials/conflict.html',
             controller: 'ConflictModalCtrl',
             //windowClass: 'app-modal-window',
-            //size: size,
+            size: 'lg',
             resolve: {
 
             }

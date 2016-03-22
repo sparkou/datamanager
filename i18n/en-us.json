@@ -82,5 +82,14 @@
     "CONSOLE_CONFIGURATION": "Console Configuration",
     "REFERENCE_DATA": "Reference Data",
     "ACA_CONFIGURATION": "ACA Configuration",
-    "AAM_CONFIGURATION": "AAM Configuration"
+    "AAM_CONFIGURATION": "AAM Configuration",
+
+
+    "SERVER_LIST": "Server List",
+    "SERVER_NAME": "Server Name",
+    "NEW_SERVER": "New Server",
+    "COMPARE": "Compare",
+    "EXPORT_HISTORY": "Show History",
+    "CURRENT_ENVIRONMENT": "Current Environment",
+    "SELECT_SERVER": "Select Server"
 }
